@@ -10,7 +10,7 @@ This repository contains lightweight HTML pages used to publish church streaming
 
 - `index.html`: Home page with navigation button(s).
 - `watchLive.html`: Embedded live stream page.
-- `watchSermon.html`: Sermon page with an embeddable video player and admin source update mode (`?admin=1`, feature branch).
+- `watchSermon.html`: Sermon page with an embeddable video player and admin source update mode (`?admin=1`).
 
 ## Live Site
 
@@ -30,8 +30,7 @@ git pull origin main
 ## Watch Sermon And Admin Console
 
 - Home page includes a `Watch Sermon` button in `index.html`.
-- On `main`, this button is currently a placeholder link (`#`).
-- The Watch Sermon page uses `watchSermon.html` (feature work) with an iframe source that can be changed in admin mode.
+- The Watch Sermon page uses `watchSermon.html` with an iframe source that can be changed in admin mode.
 - Admin mode is enabled with `?admin=1` and allows updating/saving the sermon embed URL.
 
 ## Repository Structure
@@ -43,11 +42,10 @@ CGWebPages/
 ├── images/
 ├── index.html
 ├── watchLive.html
-└── (watchSermon.html on feature branch)
+└── watchSermon.html
 ```
 
 ## Notes
 
 - Keep pages simple and fast-loading.
 - Use responsive iframe containers for video embeds.
-- Place shared media assets under `images/`.
