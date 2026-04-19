@@ -4,47 +4,102 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CityGateChurch - Watch Live</title>
+  <style>
+    body {
+      margin: 0;
+      background: #eef4f6;
+      font-family: sans-serif;
+      overflow-x: hidden;
+    }
+    .site-header {
+      background: linear-gradient(90deg, #2e3235 0%, #3d3e3e 100%);
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      border-bottom: 4px solid #23a295;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      z-index: 1000;
+    }
+    .site-logo {
+      max-width: 100px;
+      width: 92%;
+      height: auto;
+      display: block;
+      margin: 0;
+    }
+    .video-fixed {
+      position: fixed;
+      top: 64px;
+      left: 0;
+      width: 100vw;
+      z-index: 999;
+      background: #000;
+    }
+    .video-container {
+      position: relative;
+      width: 100vw;
+      max-width: 100vw;
+      aspect-ratio: 16/9;
+      background: #000;
+    }
+    .video-container iframe {
+      width: 100vw;
+      height: 56.25vw;
+      min-height: 200px;
+      max-height: 360px;
+      border: 0;
+      display: block;
+    }
+    .scroll-section {
+      width: 100vw;
+      max-width: 480px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 18px 18px 0 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      padding: 1rem;
+      height: calc(100vh - 64px - 56.25vw);
+      min-height: 200px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      margin-top: calc(64px + 56.25vw);
+      padding-top: 1.5rem;
+      padding-bottom: 4rem;
+      word-break: break-word;
+    }
+    .scripture-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .scripture-item {
+      background: #f7fafc;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 1px 4px rgba(25, 118, 210, 0.07);
+    }
+    .scripture-ref {
+      font-weight: bold;
+      color: #1976d2;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    .scripture-verse {
+      font-size: 1.05rem;
+      color: #222;
+    }
+    @media (max-width: 600px) {
+      .scroll-section {
+        max-width: 100vw;
+      }
+    }
+  </style>
   </head>
   <body>
-    <style>
-      body {
-        margin: 0;
-        background: #eef4f6;
-        font-family: sans-serif;
-      }
-      .site-header {
-        background: linear-gradient(90deg, #2e3235 0%, #3d3e3e 100%);
-        padding: 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        border-bottom: 4px solid #23a295;
-      }
-      .site-logo {
-        max-width: 100px;
-        width: 92%;
-        height: auto;
-        display: block;
-        margin: 0;
-      }
-    
-      .video-container {
-        position: relative;
-        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-        height: 0;
-        overflow: hidden;
-        max-width: 100%;
-        background: #000;
-      }
-      .video-container iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: 0;
-      }
-    </style>
 
     <header class="site-header">
       <a href="index.html" aria-label="Go to home page">
@@ -52,24 +107,81 @@
       </a>
     </header>
     <main class="page-content">
-      <div class="video-container">
-        <iframe
-          width="560"
-          height="315"
-          src="https://youtube.com/embed/live_stream?channel=UCJj-ntbpTWWvtubIK0Aww9w&autoplay=1&mute=1"
-          frameborder="0"
-          allow="
-            accelerometer;
-            autoplay;
-            clipboard-write;
-            encrypted-media;
-            gyroscope;
-            picture-in-picture;
-          "
-          allowfullscreen
-        >
-        </iframe>
+      <div class="video-fixed">
+        <div class="video-container">
+          <iframe
+            src="https://youtube.com/embed/live_stream?channel=UCJj-ntbpTWWvtubIK0Aww9w&autoplay=1&mute=1"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+      <div class="scroll-section">
+        <h2 style="margin-top:0;">SEEDS</h2>
+        <p>SEEDS - by Frank Pinho</p>
+        <div class="scripture-list">
+          <div class="scripture-item">
+            <div class="scripture-ref">Matthew 28: 18 – 19 NLT</div>
+            <div class="scripture-verse">Jesus came and told his disciples, “I have been given all authority in heaven and on earth. ''Therefore, go and make disciples of all the nations baptizing them in the name of the Father and the Son and the Holy Spirit.</div>
+          </div>
+          <div class="scripture-item">
+            <div class="scripture-ref">Matthew 13: 1 – 9 NLT</div>
+            <div class="scripture-verse">Later that same day Jesus left the house and sat beside the lake. A large crowd soon gathered around him, so he got into a boat. Then he sat there and taught as the people stood on the shore. He told many stories in the form of parables, such as this one:<br>“Listen! A farmer went out to plant some seeds. As he scattered them across his field, some seeds fell on a footpath, and the birds came and ate them. Other seeds fell on shallow soil with underlying rock. The seeds sprouted quickly because the soil was shallow. But the plants soon wilted under the hot sun, and since they didn’t have deep roots, they died. Other seeds fell among thorns that grew up and choked out the tender plants. Still other seeds fell on fertile soil, and they produced a crop that was thirty, sixty, and even a hundred times as much as had been planted! Anyone with ears to hear should listen and understand.”</div>
+          </div>
+          <div class="scripture-item">
+            <div class="scripture-ref">Genesis 1:27 NLT</div>
+            <div class="scripture-verse">So God created human beings in his own image. In the image of God he created them; male and female he created them.</div>
+          </div>
+          <div class="scripture-item" style="background:#e8f5e9;">
+            <div class="scripture-ref" style="color:#388e3c;">5 Elements for a seed to grow</div>
+            <div class="scripture-verse">
+              <ol style="margin:0 0 0 1.2em; padding:0;">
+                <li>Water</li>
+                <li>Temperature</li>
+                <li>Oxygen</li>
+                <li>Soil</li>
+                <li>Light</li>
+              </ol>
+            </div>
+          </div>
+          <div class="scripture-item" style="background:#e3f2fd;">
+            <div class="scripture-ref" style="color:#1976d2;">5 Keys to help connect more people to God</div>
+            <div class="scripture-verse">
+              <ol style="margin:0 0 0 1.2em; padding:0;">
+                <li>Your story</li>
+                <li>People skills</li>
+                <li>God’s word</li>
+                <li>Environment</li>
+                <li>Your example</li>
+              </ol>
+            </div>
+          </div>
+          <div class="scripture-item">
+            <div class="scripture-ref">Romans 10: 14 - 15 NLT</div>
+            <div class="scripture-verse">But how can they call on him to save them unless they believe in him? And how can they believe in him if they have never heard about him? And how can they hear about him unless someone tells them? 15And how will anyone go and tell them without being sent? That is why the Scriptures say, “How beautiful are the feet of messengers who bring good news!”</div>
+          </div>
+          <div class="scripture-item">
+            <div class="scripture-ref">1 Corinthians 9: 19 - 23 NLT</div>
+            <div class="scripture-verse">Even though I am a free man with no master, I have become a slave to all people to bring many to Christ. When I was with the Jews, I lived like a Jew to bring the Jews to Christ. When I was with those who follow the Jewish law, I too lived under that law. Even though I am not subject to the law, I did this so I could bring to Christ those who are under the law. When I am with the Gentiles who do not follow the Jewish law, I too live apart from that law so I can bring them to Christ. But I do not ignore the law of God; I obey the law of Christ. When I am with those who are weak, I share their weakness, for I want to bring the weak to Christ. Yes, I try to find common ground with everyone, doing everything I can to save some. I do everything to spread the Good News and share in its blessings.</div>
+          </div>
+          <div class="scripture-item">
+            <div class="scripture-ref">1 Peter 3: 15 NLT</div>
+            <div class="scripture-verse">Instead, you must worship Christ as Lord of your life. And if someone asks about your hope as a believer, always be ready to explain it.</div>
+          </div>
+          <div class="scripture-item">
+            <div class="scripture-ref">Hebrews 10: 24 - 25 NLT</div>
+            <div class="scripture-verse">Let us think of ways to motivate one another to acts of love and good works. And let us not neglect our meeting together, as some people do, but encourage one another, especially now that the day of his return is drawing near.</div>
+          </div>
+          <div class="scripture-item">
+            <div class="scripture-ref">Matthew 5: 14 - 16</div>
+            <div class="scripture-verse">“You are the light of the world. A town built on a hill cannot be hidden. Neither do people light a lamp and put it under a bowl. Instead, they put it on its stand, and it gives light to everyone in the house. In the same way, let your light shine before others, that they may see your good deeds and glorify your Father in heaven.</div>
+          </div>
+        </div>
       </div>
     </main>
+  <footer style="background: #3d3e3e; color: #fff; padding: 1rem 0; text-align: center; font-size: 1rem; font-family: sans-serif;">
+    &copy; 2026 CityGateChurch. All rights reserved.
+  </footer>
   </body>
 </html>
